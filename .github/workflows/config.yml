@@ -1,1 +1,36 @@
+name: DEPLOY DE SITE COM GITHUB ACTIONS concurrency:
 
+oN:
+ PUSH:
+   branches: ["main"]
+   
+   PERMISSIONS: 
+ CONTENTS: red
+ PAGES: write
+ ID-TOKES: write
+
+ jobs: 
+  deploy:
+   runs-on: ubuntu-lastest
+
+   steps: 
+     #atualizado para @av4 (garante compatibilidade)
+
+     - name: configurar o GITHUB pages
+       uses: actions/checkout@v4
+
+    #atualizado para @v5
+    
+     - name: uploads dos arquivos do site 
+       uses: actions/configure-pages@v5
+        
+   #atualização para @v3
+     - name: upload dos arq do site 
+       uses: actions/upload-pages-artifact@v3
+       with:
+         path: '.'
+   #@v4
+     - name: publicar no github
+       id: deployment
+       uses: actions/deploy-pages@v4
+  
