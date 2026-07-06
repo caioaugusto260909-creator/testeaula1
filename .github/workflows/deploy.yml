@@ -5,13 +5,13 @@ oN:
    branches: ["main"]
    
    PERMISSIONS: 
- CONTENTS: red
+ CONTENTS: read
  PAGES: write
  ID-TOKES: write
 
  jobs: 
   deploy:
-   runs-on: ubuntu-lastest
+   runs-on: ubuntu-latest
 
    steps: 
      #atualizado para @av4 (garante compatibilidade)
